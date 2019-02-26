@@ -32,7 +32,7 @@
   
   // Implementing Sift Test
   var _user_id = 'nate_frisella'; // Set to the user's ID, username, or email address, or '' if not yet known.
-  var _session_id = 'unique_session_id'; // Set to a unique session ID for the visitor's current browsing session.
+  var _session_id = ''; // Set to a unique session ID for the visitor's current browsing session.
 
   var _sift = window._sift = window._sift || [];
   _sift.push(['_setAccount', '1245589ac9']);
