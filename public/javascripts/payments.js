@@ -31,7 +31,6 @@
   );
   
   // Implementing Sift Test
-  <script type="text/javascript">
   var _user_id = 'nate_frisella'; // Set to the user's ID, username, or email address, or '' if not yet known.
   var _session_id = 'unique_session_id'; // Set to a unique session ID for the visitor's current browsing session.
 
@@ -53,7 +52,6 @@
      window.addEventListener('load', ls, false);
    }
  })();
-</script>
 
   // Create an instance of Elements.
   const elements = stripe.elements();
