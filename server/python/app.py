@@ -14,6 +14,7 @@ import stripe
 import json
 import setup
 import os
+import sift
 
 from inventory import Inventory
 from stripe_types import Source, Order
@@ -86,6 +87,23 @@ def make_order():
     except Exception as e:
         return jsonify(e), 403
 
+    client = sift.Client("e81bf5f38f4ce6c0")
+
+properties = {
+  "$user_id"          : "nate_frisella",
+  "$order_id"         : "ORDER-000001",
+  "$user_email"       : "nfrisella@gmail.com",
+  "$amount"           : 200000000, # $200.00
+  "$currency_code"    : "USD",
+  "$billing_address"  : {
+      "$name"         : "Nate Frisella",
+      "$phone"        : "1-415-555-6041",
+      "$address_1"    : "400 Left Road",
+      "$city"         : "Candia",
+      "$region"       : "New Hampshire",
+      "$zipcode"      : "03257"
+  }
+    response = client.track("$create_order", properties)
 
 @app.route('/orders/<string:order_id>/pay', methods=['POST'])
 def pay_order(order_id):
